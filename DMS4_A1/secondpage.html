@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyzing Neumorphism.io</title>
+  <link rel="stylesheet" href="secondpage.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Title -->
+    <div class="title-container">
+      <a href="https://neumorphism.io/#e0e0e0" class="small-link" target="_blank">Visit Neumorphism.io</a>
+      <h1>Exploring Neumorphism.io</h1>
+    </div>
+
+    <!-- Accordion Section -->
+    <ul class="accordion">
+      <li>
+        <input type="radio" name="accodion" id="first" checked />
+        <label for="first">What genre of creative software do you believe it belongs to?</label>
+        <div class="content">
+          <p>UI/UX design tool (specifically focused on generating neumorphic design styles).</p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accodion" id="second" />
+        <label for="second">List three other examples of software in this genre</label>
+        <div class="content">
+          <p>Figma, Adobe XD, Sketch</p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accodion" id="third" />
+        <label for="third">List the program's interactive features/mechanics</label>
+        <div class="content">
+          <p>1. Color Picker<br>2. Depth & Blur Sliders<br>3. Light & Dark Mode Toggle<br>4. CSS Code Generator</p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accodion" id="forth" />
+        <label for="forth">What features/mechanics indicate its genre by aligning with its conventions?</label>
+        <div class="content">
+          <p>Real-time preview, shadow/blur settings, and CSS code export match UI/UX tool conventions.</p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accodion" id="fifth" />
+        <label for="fifth">What features/mechanics are novel for its genre?</label>
+        <div class="content">
+          <p>Dedicated neumorphism-only interface and simplified UI without requiring design skills.</p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accodion" id="sixth" />
+        <label for="sixth">What features/mechanics common to its genre are missing or might be added?</label>
+        <div class="content">
+          <p>Missing real-time collaboration, typography control, and external tool integration.</p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accodion" id="seventh" />
+        <label for="seventh">What context, community or niche is it primarily aimed at and what indicates this?</label>
+        <div class="content">
+          <p>Aimed at web/UI designers, especially beginners; indicated by simplicity and CSS code output.</p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accodion" id="eighth" />
+        <label for="eighth">What did you find annoying and/or boring about interacting with it?</label>
+        <div class="content">
+          <p>❌ Limited features<br>❌ No shape customization<br>❌ Trend has usability issues</p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accodion" id="nineth" />
+        <label for="nineth">What did you find enjoyable about interacting with it?</label>
+        <div class="content">
+          <p>✅ Simple & intuitive<br>✅ Real-time preview<br>✅ Easy CSS export</p>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Navigation Buttons -->
+    <a href="index.html" class="back-button">◂</a>
+    <button class="neu-button">Watch Demo</button>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <video id="demoVideo" width="100%" height="100%" controls>
+        <source src="DMS4_A1_Video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Modal Script -->
+  <script>
+    const modal = document.getElementById("videoModal");
+    const btn = document.querySelector(".neu-button");
+    const span = document.querySelector(".close-button");
+    const video = document.getElementById("demoVideo");
+
+    btn.onclick = function () {
+      modal.style.display = "flex";
+      video.play();
+    }
+
+    span.onclick = function () {
+      modal.style.display = "none";
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        video.pause();
+        video.currentTime = 0;
+      }
+    }
+  </script>
+</body>
+</html>

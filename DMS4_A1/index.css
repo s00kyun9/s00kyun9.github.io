@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 150px;
+    box-sizing: border-box;
+    color: #4b1723e9;
+}
+  
+body {
+    background: #F0F0F0;
+}
+  
+/* Homepage wrapper now uses flexbox to center the elements with a gap */
+.homepage-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* Adjust the gap as needed */
+    height: 100vh;
+    padding: 0 50px; /* Optional side padding */
+}
+  
+/* Title container: left-aligned text within its own container */
+.title-container {
+    text-align: left;
+}
+  
+/* Button container: right-aligned text within its own container */
+.button-container {
+    text-align: right;
+}
+  
+/* Styling the button as a large button */
+button {
+    width: 150px;
+    height: 150px;
+    background: #F0F0F0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 6px 6px 12px #cccccc,
+                -6px -6px 12px #ffffff;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+  
+button:hover {
+    background: #fff0f5; /* Very light pink */
+    box-shadow: inset 6px 6px 12px #cccccc,
+                inset -6px -6px 12px #ffffff;
+}
