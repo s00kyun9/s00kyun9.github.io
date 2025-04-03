@@ -1,10 +1,20 @@
+/*
+==================================================
+Global Styles
+==================================================
+*/
 body {
   margin: 0;
-  background-color: #fffef2;
-  color: #4370e6;
-  font-family: 'Space Grotesk', sans-serif;
+  background-color: #fffef2; /* Soft background to reduce strain */
+  color: #4370e6; /* Primary blue color */
+  font-family: 'Space Grotesk', sans-serif; /* Main sans-serif font */
 }
 
+/*
+==================================================
+Header Styling
+==================================================
+*/
 header {
   background-color: #fffef2;
   border-bottom: 1.5px solid #4370e6;
@@ -21,7 +31,7 @@ header {
 }
 
 header h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', serif; /* Elegant serif for title */
   font-size: 2rem;
   margin: 0;
 }
@@ -34,11 +44,21 @@ header h1 {
   white-space: nowrap;
 }
 
+/*
+==================================================
+Main Container and Layout
+==================================================
+*/
 .container {
   display: flex;
-  margin-top: 4.5rem;
+  margin-top: 4.5rem; /* Matches header height */
 }
 
+/*
+==================================================
+Sidebar Styling
+==================================================
+*/
 .fixed-sidebar {
   display: flex;
   flex-direction: column;
@@ -115,6 +135,11 @@ header h1 {
   text-decoration: none;
 }
 
+/*
+==================================================
+Main Content Area
+==================================================
+*/
 .qa-scroll {
   margin-left: 400px;
   padding: 2rem 3rem;
@@ -141,7 +166,7 @@ header h1 {
   color: #4370e6;
   margin-bottom: 2rem;
   width: 400px;
-  word-break: keep-word;
+  word-break: keep-word; /* Prevents word cutoff */
 }
 
 .qa-scroll p, .qa-scroll ul {
@@ -161,6 +186,11 @@ header h1 {
   margin: 2rem 0;
 }
 
+/*
+==================================================
+Question Block Styling
+==================================================
+*/
 .question-block {
   margin-bottom: 4rem;
   scroll-margin-top: 6.5rem;
@@ -231,6 +261,11 @@ header h1 {
   opacity: 1;
 }
 
+/*
+==================================================
+Responsive Breakpoints
+==================================================
+*/
 @media (max-width: 1024px) {
   .question-text h2 {
     font-size: 1rem;
