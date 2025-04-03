@@ -1,20 +1,10 @@
-/*
-==================================================
-Global Styles
-==================================================
-*/
 body {
   margin: 0;
-  background-color: #fffef2; /* Soft background to reduce strain */
-  color: #4370e6; /* Primary blue color */
-  font-family: 'Space Grotesk', sans-serif; /* Main sans-serif font */
+  background-color: #fffef2;
+  color: #4370e6;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-/*
-==================================================
-Header Styling
-==================================================
-*/
 header {
   background-color: #fffef2;
   border-bottom: 1.5px solid #4370e6;
@@ -31,7 +21,7 @@ header {
 }
 
 header h1 {
-  font-family: 'Cormorant Garamond', serif; /* Elegant serif for title */
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
   margin: 0;
 }
@@ -44,21 +34,11 @@ header h1 {
   white-space: nowrap;
 }
 
-/*
-==================================================
-Main Container and Layout
-==================================================
-*/
 .container {
   display: flex;
-  margin-top: 4.5rem; /* Matches header height */
+  margin-top: 4.5rem;
 }
 
-/*
-==================================================
-Sidebar Styling
-==================================================
-*/
 .fixed-sidebar {
   display: flex;
   flex-direction: column;
@@ -135,11 +115,6 @@ Sidebar Styling
   text-decoration: none;
 }
 
-/*
-==================================================
-Main Content Area
-==================================================
-*/
 .qa-scroll {
   margin-left: 400px;
   padding: 2rem 3rem;
@@ -166,7 +141,6 @@ Main Content Area
   color: #4370e6;
   margin-bottom: 2rem;
   width: 400px;
-  word-break: keep-word; /* Prevents word cutoff */
 }
 
 .qa-scroll p, .qa-scroll ul {
@@ -183,17 +157,15 @@ Main Content Area
 .qa-scroll hr {
   border: none;
   border-top: 1.5px solid #4370e6;
-  margin: 2rem 0;
+  margin-left: -4rem;
+  margin-right: -2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-/*
-==================================================
-Question Block Styling
-==================================================
-*/
 .question-block {
   margin-bottom: 4rem;
-  scroll-margin-top: 6.5rem;
+  scroll-margin-top: 0.02rem;
 }
 
 .question-inner {
@@ -202,7 +174,6 @@ Question Block Styling
   align-items: flex-start;
   gap: 2rem;
   max-width: 100%;
-  flex-wrap: wrap;
 }
 
 .question-text {
@@ -261,15 +232,9 @@ Question Block Styling
   opacity: 1;
 }
 
-/*
-==================================================
-Responsive Breakpoints
-==================================================
-*/
 @media (max-width: 1024px) {
   .question-text h2 {
     font-size: 1rem;
-    width: auto;
   }
   .question-text p, .question-text ul {
     font-size: 0.9em;
