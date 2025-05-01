@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Space</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- 
+  Study Space - Media Player Webpage 
+  Designed for RMIT Interactive Media Assignment 2
+
+  This project transforms a basic media player template into a fully styled,
+  focused “study space” interface. All components serve to help students manage
+  time, maintain focus, and stay mentally refreshed while studying.
+ -->
+
+<!-- Header banner with soft aesthetic sets the mood and identity of the page -->
+<div class="header-banner">
+  <img src="Header_Banner.jpg" alt="Header Banner" />
+</div>
+
+<!-- Main title conveys calm, minimal branding -->
+<header class="page-header">
+  <h1 class="site-title">Study Space 𐙚 ⋆˚</h1>
+</header>
+
+<!-- 
+  The layout is a 3-column grid (left: tools, center: music, right: to-dos).
+  Each section enhances the learning experience through intentional design. 
+-->
+<main class="layout">
+  
+  <!-- Left: planning tools to help students organize study sessions -->
+  <section class="left-panel">
+
+    <!-- 
+       Calendar: allows users to visualize time and click to mark days.
+      Motivation icon (🌱) appears when clicked, encouraging habit formation.
+    -->
+    <div class="calendar-section">
+      <h2>✿ Calender</h2>
+      <div class="calendar-header">
+        <button id="prevMonth">‹</button>
+        <span id="calendarMonthYear"></span>
+        <button id="nextMonth">›</button>
+      </div>
+      <table id="calendarTable">
+        <!-- Calendar dynamically filled by JS -->
+      </table>
+    </div>
+
+    <!-- 
+       Stopwatch: helps users track focused work time.
+      This supports Pomodoro technique or custom time blocks.
+      Clear controls (Start / Pause / Reset) aid usability.
+    -->
+    <div class="stopwatch-section">
+      <h3>✿ Stopwatch</h3>
+      <div class="stopwatch-display" id="stopwatch">00:00:00</div>
+      <div class="stopwatch-controls">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Center: core music player and tracklist area -->
+  <section class="center-panel">
+
+    <!-- 
+       Playlist card includes album art and controls.
+      Audio playback allows users to enjoy relaxing music while studying.
+    -->
+    <div class="playlist-card">
+      <div class="playlist-left">
+        <img src="Playlist BG.jpg" class="playlist-cover" />
+      </div>
+
+      <!-- 
+        Track display shows current playing song.
+        Buttons include prev/play/next, styled for touch and mouse use.
+      -->
+      <div class="playlist-right">
+        <div class="playlist-content">
+          <p id="trackFull" class="track-full">너의 한마디 – 신인류</p>
+        </div>
+
+        <div class="playlist-controls">
+          <button id="prevBtn">⏮</button>
+          <button id="playPauseBtn">⏯</button>
+          <button id="nextBtn">⏭</button>
+        </div>
+
+        <div class="progress-container">
+          <span id="currentTime">0:00</span>
+          <input type="range" id="progressBar" value="0" min="0" max="100" step="0.1">
+          <span id="remainingTime">-0:00</span>
+        </div>
+
+        <!-- Optional line to personalize the experience -->
+        <div class="playlist-subtitle">𑣲 Soo's Playlist ˚₊·—̳͟͞͞♡</div>
+
+        <!-- Audio element used by JavaScript playback control -->
+        <audio id="audioPlayer"></audio>
+      </div>
+    </div>
+
+    <!-- 
+       Full track list is displayed under player.
+      Clickable, shows current track with highlight, and hover effect for UX.
+    -->
+    <div class="playlist-tracklist">
+      <h4>🎧Track List  ⋰˚✩</h4>
+      <ol>
+        <li>너의 한마디 – 신인류</li>
+        <li>무릎 – 아이유</li>
+        <li>시가 될 이야기 – 신지훈</li>
+        <li>그런 날 – 윈터</li>
+        <li>가끔 미치도록 네가 안고 싶을 때가 있어 – 가을방학</li>
+        <li>여름비 – 샘김</li>
+        <li>우리가 헤어져야 했던 이유 – 비비</li>
+        <li>Come back – 수지</li>
+        <li>기다린 만큼 더 – 검정치마</li>
+        <li>우리 사이 은하수를 만들어 – 오존</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Right: minimalist to-do panel for quick task tracking -->
+  <section class="right-panel">
+    <div class="todo-section">
+      <h3>✿ To-Do</h3>
+      <form id="todoForm">
+        <ul class="static-todo-list">
+          <!-- 
+            10 text inputs with checkboxes help break tasks into subtasks.
+            This avoids cognitive overload while promoting task visibility.
+          -->
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+          <li><input type="checkbox"><input type="text" placeholder="To-do"></li>
+        </ul>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- 
+  Footer provides academic context and author acknowledgment.
+  Ensures proper submission info and professionalism.
+-->
+<footer class="site-footer">
+  <p>© 2025 Study Media Player. All rights reserved.</p>
+  <p>Designed and developed by Sookyung Yoo for RMIT Assignment 2 – Interactive Media</p>
+</footer>
+
+<!-- External JavaScript loaded last to ensure DOM is ready -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+/* 
+  Design Styles
+  - Base reset and typography settings to ensure visual consistency.
+  - Colors and font choices are intentionally subtle and study-friendly.
+*/
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: 'Times New Roman', serif;
+  color: #3a3a3a;
+}
+
+/* 
+  Header Banner 
+  - Full-width image that sets a calm tone at the top of the page.
+*/
+.header-banner {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 
+  Page Header 
+  - Displays the page title in a minimal and balanced layout.
+*/
+.page-header {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-bottom: 14px solid #dae0cd70; /* soft green-gray divider */
+}
+
+.site-title {
+  font-size: 1.8rem;
+  color: #222;
+  margin-left: -2rem;
+}
+
+/* 
+  Layout Grid 
+  - Main 3-column structure using CSS Grid for calendar, media player, and to-do list.
+*/
+.layout {
+  max-width: 1450px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.4fr 1.0fr 0.4fr;
+  column-gap: 5rem;
+  row-gap: 2rem;
+  padding: 2rem 0;
+  align-items: start;
+}
+
+/* =============================== */
+/*            Calendar             */
+/* =============================== */
+
+.calendar-section {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.calendar-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #3a3a3a;
+  cursor: pointer;
+}
+
+.calendar-header span {
+  font-size: 0.9rem;
+}
+
+#calendarTable {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#calendarTable th, #calendarTable td {
+  width: 12%;
+  height: 40px;
+  padding: 0;
+  vertical-align: top;
+}
+
+.calendar-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.day-number {
+  font-size: 0.7rem;
+  margin-top: 2px;
+}
+
+.emoji {
+  margin-top: 3px;
+  font-size: 0.9rem;
+  min-height: 1rem;
+}
+
+.today .day-number {
+  background: #e57373;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-size: 0.75rem;
+}
+
+/* Vertical Spacing Adjustments */
+.left-panel > *, .right-panel > * {
+  margin-bottom: 2rem;
+  margin-top: -3rem;
+}
+
+.center-panel > * {
+  margin-bottom: 2rem;
+  margin-top: -3.5rem;
+}
+
+/* =============================== */
+/*           Media Player          */
+/* =============================== */
+
+.center-panel .media-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.center-panel .media-box iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 100px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/* Track list underneath media card */
+.playlist-tracklist {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Times New Roman', serif;
+}
+
+.playlist-tracklist h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 1.4px solid #3f403d30;
+}
+
+.playlist-tracklist ol {
+  padding-left: 1.2rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.playlist-tracklist li {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.playlist-tracklist li:hover {
+  background-color: #ececec;
+}
+
+.playlist-tracklist li.active-track {
+  font-weight: bold;
+  color: #1a1a1a;
+  background-color: #dcdcdc;
+}
+
+/* =============================== */
+/*              To-Do              */
+/* =============================== */
+
+.static-todo-list {
+  list-style: none;
+  padding: 1rem;
+  background: #fafafa;
+}
+
+.static-todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.static-todo-list input[type="text"] {
+  flex: 1;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+/* =============================== */
+/*         Playlist Card UI        */
+/* =============================== */
+
+.playlist-card {
+  display: flex;
+  background-color: #373e2fdc; /* olive-green with transparency */
+  border-radius: 16px;
+  overflow: hidden;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  min-height: 160px;
+}
+
+#trackFull {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #ffffff;
+}
+
+.playlist-left {
+  flex: 0 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlist-cover {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.playlist-right {
+  position: relative;
+  padding: 1rem 1.5rem 1.5rem 0;
+  flex: 1;
+}
+
+/* Player Controls - bottom-right positioning */
+.playlist-controls {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 0.9rem;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.playlist-controls button {
+  background-color: #ffffffe9;
+  color: #373e2fdc;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Progress Bar Styling */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  margin: 1.2rem auto 0;
+  font-size: 0.9rem;
+  color: #ffffff85;
+  font-family: 'Poppins', sans-serif;
+}
+
+#progressBar {
+  flex: 1;
+  appearance: none;
+  height: 8px;
+  border-radius: 9px;
+  background: #9f98986f;
+  outline: none;
+  cursor: pointer;
+}
+
+#progressBar::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #d1dbcd;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 1px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+#progressBar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #6a4c57;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.playlist-subtitle {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.9rem;
+  color: #ffffffa8;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =============================== */
+/*             Stopwatch           */
+/* =============================== */
+
+.stopwatch-section {
+  text-align: left;
+  padding: 2rem 0;
+  font-family: 'Times New Roman', serif;
+}
+
+.stopwatch-display {
+  font-size: 4.7rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  color: #333;
+}
+
+.stopwatch-controls button {
+  margin: 0 0.3rem;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.stopwatch-controls button.active {
+  background-color: #a8c3a0;
+  color: white;
+  border: none;
+}
+
+/* =============================== */
+/*              Footer             */
+/* =============================== */
+
+.site-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .center-panel, .left-panel, .right-panel {
+    padding-bottom: 2rem;
+  }
+}
