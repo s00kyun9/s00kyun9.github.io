@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 80px 20px;
+  background-image: url('page2.png/BG2.png');
+  font-family: 'Times New Roman', serif;
+  color: #715160;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.5rem;
+  color: #715160;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #9c6a74;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 40px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #715160;
+}
+
+small {
+  display: block;
+  margin-bottom: 8px;
+  color: #a18c8c;
+  font-size: 0.85rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c4bdb7;
+  border-radius: 2px;
+  background-color: #fffdfb69;
+  font-size: 1rem;
+  font-family: 'Nanum Myeongjo', serif;
+  color: #5a3a3a;
+}
+
+textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 0.8rem;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  color: #715160;
+  background-color: transparent;
+  border: 2px solid #715160;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #715160;
+  color: white;
+}
+
+/* ✅ 로딩 오버레이 */
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: none; /* JS에서 show */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ✅ 로딩 내부 구성 */
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.envelope-loader {
+  font-size: 3rem;
+  animation: floatFade 1.5s ease-in-out infinite;
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: #715160;
+}
+
+@keyframes floatFade {
+  0%   { opacity: 0.2; transform: translateY(0px) scale(1); }
+  50%  { opacity: 1; transform: translateY(-10px) scale(1.1); }
+  100% { opacity: 0.2; transform: translateY(0px) scale(1); }
+}

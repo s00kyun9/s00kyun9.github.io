@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #f6f2f0;
+  font-family: 'Times New Roman', serif;
+  color: #715160;
+  text-align: center;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* 핵심: 수평 중앙 정렬 */
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #9c6a74;
+  font-size: 1.1rem;
+  font-style: italic;
+  text-align: center;
+  max-width: 600px;
+  margin-top: 0;
+}
+
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.customization-sidebar {
+  position: absolute;
+  top: 45%;
+  left: calc(50% - 600px / 2 - 110px); /* 💡 엽서 기준 왼쪽에 정확히 붙이기 */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 60px;
+}
+
+.tab-btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn.active {
+  background-color: #fbe6ee;
+}
+
+.reset-button {
+  width: 60px;
+  height: 60px;
+  background-color: #f3d1dc9a;
+  border: 2px solid #d6a2b876;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.postcard-wrapper {
+  width: 600px;
+  margin: 0 auto; /* 💡 중앙 정렬 핵심 */
+  position: relative;
+  z-index: 1;
+}
+
+
+.postcard {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  padding: 30px;
+  background-color: #fffaf0;
+  border-radius: 2px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.to, .message {
+  text-align: left;
+  left: 30px;
+  white-space: pre-wrap;
+  position: relative;
+  font-family: 'Sour Gummy', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  z-index: 3;
+  width: 90%;
+}
+
+.from {
+  position: absolute;
+  bottom: 30px;
+  right: 60px;
+  font-family: 'Sour Gummy', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  text-align: right;
+  white-space: pre-wrap;
+  max-width: calc(100% - 60px);
+}
+
+
+.frame-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#sticker-layer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  overflow: hidden; 
+}
+
+.placed-sticker {
+  position: absolute;
+  width: 60px;
+  cursor: move;
+  z-index: 15;
+}
+
+.customization-content {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tab-panel {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.color-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #aaaaaa;
+  cursor: pointer;
+}
+
+.cream { background-color: #fffaf0; }
+.pink  { background-color: #ffeef2; }
+.mint  { background-color: #f2feff; }
+.lilac { background-color: #fef2ff; }
+.white { background-color: #f7f5f5; }
+
+.border-thumb, .sticker-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.border-thumb:hover, .sticker-thumb:hover {
+  transform: scale(1.1);
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.envelope-loader {
+  font-size: 3rem;
+  animation: floatFade 1.5s ease-in-out infinite;
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #715160;
+}
+
+
+.save-button-container {
+  position: absolute;
+  top: 45%;
+  left: calc(50% + 390px + 20px);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.save-icon-image{
+  height: 30px;
+  image-rendering: crisp-edges; /* 또는 pixelated */
+}
+
+.save-icon-image:hover {
+  transform: scale(1.1);
+}
+
+.save-alert {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3d2c3193;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  font-family: 'Times New Roman', serif;
+}
+.save-alert.show {
+  opacity: 1;
+}
+
+#panel-photo {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column; /* 위아래 배치 */
+  height: 20px; /* 필요 시 높이 조정 */
+}
+
+#panel-photo input[type="file"] {
+  transform: translateX(50px); /* ← 오른쪽으로 40px 이동 */
+}
+
+
+@keyframes floatFade {
+  0%   { opacity: 0.2; transform: translateY(0px) scale(1); }
+  50%  { opacity: 1; transform: translateY(-10px) scale(1.1); }
+  100% { opacity: 0.2; transform: translateY(0px) scale(1); }
+}

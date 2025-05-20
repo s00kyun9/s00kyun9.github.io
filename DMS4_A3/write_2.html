@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Write Your Letter</title>
+  <link rel="stylesheet" href="write_2.css">
+  <style>
+    .loading-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(255, 255, 255, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .loading-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .envelope-loader {
+      font-size: 3rem;
+      animation: floatFade 1.5s ease-in-out infinite;
+    }
+    .loading-text {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-family: 'Times New Roman', Times, serif;
+      color: #715160;
+    }
+    @keyframes floatFade {
+      0% { opacity: 0.2; transform: translateY(0px) scale(1); }
+      50% { opacity: 1; transform: translateY(-10px) scale(1.1); }
+      100% { opacity: 0.2; transform: translateY(0px) scale(1); }
+    }
+  </style>
+</head>
+
+<body id="write-page">
+
+  <!-- 로딩 오버레이 -->
+  <div id="loading" class="loading-overlay">
+    <div class="loading-content">
+      <div class="envelope-loader">✉️</div>
+      <p class="loading-text">Writing your letter... ✨</p>
+    </div>
+  </div>
+<body>
+  <div class="page-wrapper">
+  <h1 class="main-text">🕊 Write a letter ˚‧｡♥</h1>
+  <p class="subtitle">The unspoken truth in my heart—today, I try to write it down with care.</p>
+  </div>
+</body>
+
+  <!-- ✅ onsubmit 제거 -->
+  <form>
+    <label for="to">Dear… <span style="color:red;">*</span></label>
+    <input type="text" id="to" name="to" required>
+
+    <label for="message">Write Your Letter Here… <span style="color:red;">*</span></label>
+    <textarea id="message" name="message" maxlength="450" required></textarea>
+    <div class="char-count"><span id="char-count">0</span>/450</div>
+
+    <label for="from">From… <span style="color:red;">*</span></label>
+    <input type="text" id="from" name="from" required>
+
+    <button type="submit" class="submit-btn">SUBMIT</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

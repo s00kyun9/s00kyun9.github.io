@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lettering</title>
+  <link rel="stylesheet" href="lettering_3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+</head>
+<body id="lettering-page">
+<audio id="bg-music" src="audio/bg_music.mp3" autoplay loop></audio>
+
+  <div class="header-wrapper">
+    <h1 class="title">-ˋˏ 𑣲 Lettering ∘˚˳°∘° </h1>
+    <p class="subtitle">“Fill it your way—it’s your letter, your canvas to unfold.”</p>
+  </div>
+
+  <div class="main-layout">
+    <!-- 왼쪽 사이드바 -->
+    <div class="customization-sidebar">
+      <button onclick="activateTool('color')" id="tab-color" class="tab-btn active">🎨</button>
+      <button onclick="activateTool('frame')" id="tab-frame" class="tab-btn">🖼️</button>
+      <button onclick="activateTool('sticker')" id="tab-sticker" class="tab-btn">✨</button>
+      <button onclick="activateTool('tape')" id="tab-tape" class="tab-btn">📎</button>
+      <button onclick="activateTool('photo')" id="tab-photo" class="tab-btn">📷</button>
+      <button class="reset-button" onclick="resetLetter()">🔄</button>
+    </div>
+
+    <!-- 중앙 편지지 -->
+    <div>
+      <div class="postcard-wrapper">
+        <div id="postcard" class="postcard cream">
+          <div id="frame-overlay" class="frame-overlay"></div>
+          <div id="sticker-layer"></div>
+          <p class="to">Dear <span id="to-text">[To]</span>,</p>
+          <p class="message" id="message-text">[Message]</p>
+          <p class="from">From, <span id="from-text">[From]</span></p>
+        </div>
+      </div>
+
+      <!-- 아래 커스터마이징 영역 -->
+      <div class="customization-content">
+        <div id="panel-color" class="tab-panel">
+          <button class="color-btn cream" onclick="changeColor('cream')"></button>
+          <button class="color-btn pink" onclick="changeColor('pink')"></button>
+          <button class="color-btn mint" onclick="changeColor('mint')"></button>
+          <button class="color-btn lilac" onclick="changeColor('lilac')"></button>
+          <button class="color-btn white" onclick="changeColor('white')"></button>
+        </div>
+
+        <div id="panel-frame" class="tab-panel" style="display: none;">
+          <img src="borders_3/frame1.png" class="border-thumb" onclick="setBorder('borders_3/frame1.png')" />
+          <img src="borders_3/frame2.png" class="border-thumb" onclick="setBorder('borders_3/frame2.png')" />
+          <img src="borders_3/frame3.png" class="border-thumb" onclick="setBorder('borders_3/frame3.png')" />
+          <img src="borders_3/frame4.png" class="border-thumb" onclick="setBorder('borders_3/frame4.png')" />
+          <img src="borders_3/frame5.png" class="border-thumb" onclick="setBorder('borders_3/frame5.png')" />
+          <img src="borders_3/frame6.png" class="border-thumb" onclick="setBorder('borders_3/frame6.png')" />
+          <img src="borders_3/frame7.png" class="border-thumb" onclick="setBorder('borders_3/frame7.png')" />
+          <img src="borders_3/frame8.png" class="border-thumb" onclick="setBorder('borders_3/frame8.png')" />          
+        </div>
+
+        <div id="panel-sticker" class="tab-panel" style="display: none;">
+          <img src="stickers_3/button.png" class="sticker-thumb" onclick="addSticker('stickers_3/button.png')" />
+          <img src="stickers_3/bear.png" class="sticker-thumb" onclick="addSticker('stickers_3/bear.png')" />
+          <img src="stickers_3/star.png" class="sticker-thumb" onclick="addSticker('stickers_3/star.png')" />
+          <img src="stickers_3/tongs.png" class="sticker-thumb" onclick="addSticker('stickers_3/tongs.png')" />
+          <img src="stickers_3/ribbon.png" class="sticker-thumb" onclick="addSticker('stickers_3/ribbon.png')" />
+          <img src="stickers_3/rip.png" class="sticker-thumb" onclick="addSticker('stickers_3/rip.png')" />
+          <img src="stickers_3/heart.png" class="sticker-thumb" onclick="addSticker('stickers_3/heart.png')" />
+        </div>
+
+        <div id="panel-tape" class="tab-panel" style="display: none;">
+          <img src="tapes_3/tape1.png" class="sticker-thumb" onclick="addSticker('tapes_3/tape1.png')" />
+          <img src="tapes_3/tape2.png" class="sticker-thumb" onclick="addSticker('tapes_3/tape2.png')" />
+          <img src="tapes_3/tape3.png" class="sticker-thumb" onclick="addSticker('tapes_3/tape3.png')" />
+        </div>
+
+        <div id="panel-photo" class="tab-panel" style="display: none;">
+          <input type="file" accept="image/*" onchange="uploadImage(event)" />
+        </div>
+      </div>
+    </div>
+
+<div class="save-button-container">
+  <img src="icons/down.png" alt="Save" class="save-icon-image" onclick="savePostcardImage()" />
+</div>
+
+
+  <div id="save-alert" class="save-alert">✅ All done! Your postcard is saved</div>
+
+  <script src="lettering_3.js"></script>
+
+</body>
+</html>

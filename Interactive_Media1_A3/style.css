@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: white;
+    color: #111;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 100px 0;
+  }
+  
+  .block {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
+    will-change: opacity, transform, filter;
+  }
+  
+  img {
+    width: 70%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .final-message p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #888;
+  }
+  
+  .fade {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  
+  /* 파편화 효과 */
+.fragmented {
+    animation: breakApart 1s forwards;
+  }
+  
+  @keyframes breakApart {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-100px) rotate(20deg); }
+  }
+  
+  /* 흔들리는 효과 */
+  .shaky {
+    animation: shake 0.4s infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-1px); }
+    50% { transform: translateX(1px); }
+    75% { transform: translateX(-1px); }
+    100% { transform: translateX(0); }
+  }
+  

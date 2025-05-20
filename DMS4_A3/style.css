@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-image: url('page1.png/BG1_1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 배경 고정 */
+  font-family: 'Nanum Myeongjo', serif;
+  color: #715160;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+.centered-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* 제목 폰트 및 색상 */
+.main-text {
+  font-family: 'Meddon', cursive;
+  font-size: 3.8rem;
+  letter-spacing: 0.05rem;
+  margin: 0;
+  color: #715160;
+}
+
+.main-text em {
+  font-style: italic;
+  color: #9c6a74;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #715160;
+  font-style: italic;
+  letter-spacing: 0.03rem;
+}
+
+.seal-wrapper {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.seal-image {
+  width: 190px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.seal-image:hover {
+  transform: scale(1.05);
+}
+
+
+/* ✨ 인용문 위치 그대로 */
+.quote-wrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+}
+
+.quote {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: #cdb8bf;
+}
+
