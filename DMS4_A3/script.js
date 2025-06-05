@@ -52,7 +52,7 @@ messageBox.addEventListener('input', () => {
   charCount.textContent = messageBox.value.length;
 });
 
- window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
       const music = document.getElementById("bg-music");
       document.body.addEventListener("click", () => {
         if (music.paused) {
@@ -60,5 +60,4 @@ messageBox.addEventListener('input', () => {
         }
       }, { once: true });
     });
-
-  
+    
