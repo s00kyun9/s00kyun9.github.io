@@ -2,35 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Erase: 기억 해체 실험실</title>
+  <title>I Wanted</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
 </head>
 <body>
-  <main class="container">
+  <svg>
+    <filter id="turbulence">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="1" result="turbulence" />
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
 
-    <section class="block fade slow" data-message="말하지 않아도, 기억은 남아.">
-      <h1>잊고 싶은 기억을 하나 떠올려 주세요.</h1>
-    </section>
-
-    <section class="block fade blur" data-message="그 장면은 흘려보내도 괜찮아.">
-      <p>그날 나는 아무 말도 하지 못했다.</p>
-    </section>
-
-    <section class="block fade shaky" data-message="감정은 이제 나만의 것이야.">
-      <p>너는 웃고 있었고, 나는 무너졌지.</p>
-    </section>
-
-    <section class="block fade spread" data-message="마음은 회복될 수 있어요.">
-      <p>이름을 부르지 않아도 알 수 있었던 감정.</p>
-    </section>
-
-    <section class="block fade final-message">
-      <p>…이제 보내도 괜찮아요.</p>
-    </section>
-
-  </main>
-
-  <div id="feedback" class="feedback hidden"></div>
+  <div id="wrapper">
+    <p id="text" onclick="next()"></p>
+  </div>
 
   <script src="script.js"></script>
 </body>
