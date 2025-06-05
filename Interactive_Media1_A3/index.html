@@ -1,12 +1,17 @@
 <!DOCTYPE html>
+<!-- HTML5 doctype declaration to ensure modern browser rendering -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>I Wanted</title>
+  <!-- Link to main visual stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <!-- CSS reset for consistent styling across browsers -->
   <link rel="stylesheet" href="reset.css">
 </head>
 <body>
+  <!-- SVG filter for visual distortion applied to the text -->
+  <!-- This creates a digital ‘turbulence’ effect, enhancing emotional ambiguity -->
   <svg>
     <filter id="turbulence">
       <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="1" result="turbulence" />
@@ -14,10 +19,13 @@
     </filter>
   </svg>
 
+  <!-- Full-screen container for background image and centered text -->
   <div id="wrapper">
+    <!-- Text block that changes on click. Acts as the primary user interaction point -->
     <p id="text" onclick="next()"></p>
   </div>
 
+  <!-- JavaScript for sequencing text and visuals -->
   <script src="script.js"></script>
 </body>
 </html>

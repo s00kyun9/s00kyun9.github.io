@@ -46,8 +46,9 @@ const sentences = [
 
 const backgrounds = Array.from({ length: 60 }, (_, i) => `img/Frame ${i + 1}.jpg`);
 
-let i = 0;
+let i = 0; // Track current frame/text index
 
+// On initial load, display the first sentence and background
 window.onload = () => {
   const textEl = document.getElementById("text");
   const bgEl = document.getElementById("wrapper");
@@ -56,51 +57,58 @@ window.onload = () => {
   i++;
 };
 
+// Called every time the user clicks on the screen (advances narrative)
 function next() {
   const textEl = document.getElementById("text");
   const bgEl = document.getElementById("wrapper");
 
+  // Fade out effect for smooth visual transition
   textEl.style.opacity = 0;
   bgEl.style.opacity = 0;
 
   setTimeout(() => {
     if (i < sentences.length) {
+      // Update text and background for next sequence
       textEl.textContent = sentences[i];
       bgEl.style.backgroundImage = `url('${backgrounds[i]}')`;
 
-      // Reset all classes
+      // Reset any animation class from previous state
       textEl.classList.remove("pulse");
       bgEl.classList.remove("blur");
 
       const s = sentences[i];
 
-      // 고조되는 갈망
+      // Trigger visual pulse for emotionally intense lines
       if (s.includes("truly—desperately") || s.includes("afraid")) {
         textEl.classList.add("pulse");
       }
 
-      // 현실감 상실
+      // Blur background during dreamlike or surreal moments
       if (s.includes("continue to crave") || s.includes("yearning")) {
         bgEl.classList.add("blur");
       }
 
       i++;
     } else if (i === sentences.length) {
+      // Transition into a literary quote using a blinking cursor
       bgEl.style.backgroundImage = `url('${backgrounds[i]}')`;
       textEl.innerHTML = '<span id="cursor">|</span>';
       textEl.onclick = () => startDemianTyping();
       i++;
     }
 
+    // Fade-in after the transition
     textEl.style.opacity = 1;
     bgEl.style.opacity = 1;
   }, 300);
 }
 
+// Handles typing animation for Hermann Hesse quote
 function startDemianTyping() {
   const textEl = document.getElementById("text");
-  textEl.onclick = null;
+  textEl.onclick = null; // Prevent re-clicking
 
+  // Demian quote broken into lines for controlled typing
   const demianLines = [
     "a bird",
     "fights to break from its egg.",
@@ -113,9 +121,11 @@ function startDemianTyping() {
   const fullText = demianLines.join("\n");
   let currentChar = 0;
 
+  // Set up structure with a blinking cursor and empty span
   textEl.innerHTML = '<span id="typed-text" style="font-style: italic;"></span><span id="cursor">|</span>';
   const typedEl = document.getElementById("typed-text");
 
+  // Letter-by-letter typing effect
   const interval = setInterval(() => {
     if (currentChar < fullText.length) {
       typedEl.textContent += fullText[currentChar];
@@ -124,10 +134,10 @@ function startDemianTyping() {
       clearInterval(interval);
       document.getElementById("cursor").style.display = "none";
 
-      // 인용구가 끝난 후 fade away 효과
+      // After 2 seconds, apply fade-out (if desired later via class)
       setTimeout(() => {
         typedEl.classList.add("fade");
       }, 2000);
     }
-  }, 70);
+  }, 70); // Typing speed (ms per character)
 }
