@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Open Gently: A Reflection in Letters─˚♡*˳</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -21,7 +22,7 @@
   </div>
 </header>
 
-<!-- 영상 모달 -->
+<!-- Video Modal -->
 <div class="modal-overlay" id="videoModal">
   <div class="modal video-modal">
     <button class="modal-close" onclick="closeVideoModal()">&times;</button>
@@ -31,110 +32,98 @@
     </video>
   </div>
 </div>
-  
-  <main class="grid-container">
-    <div class="envelope" onclick="openModal('Purpose')">
-      <div class="flap">
-        <h2>Purpose</h2>
-        <div class="handle"></div>
-      </div>
-      <div class="content">
-        <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
-      </div>
-    </div>
 
-    <div class="envelope" onclick="openModal('Worth')">
-      <div class="flap">
-        <h2>Worth</h2>
-        <div class="handle"></div>
-      </div>
-      <div class="content">
-        <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
-      </div>
+<main class="grid-container">
+  <div class="envelope" onclick="openModal('Purpose')">
+    <div class="flap">
+      <h2>Purpose</h2>
+      <div class="handle"></div>
     </div>
-
-    <div class="envelope" onclick="openModal('Framing')">
-      <div class="flap">
-        <h2>Framing</h2>
-        <div class="handle"></div>
-      </div>
-      <div class="content">
-        <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
-      </div>
-    </div>
-
-    <div class="envelope" onclick="openModal('Appearance')">
-      <div class="flap">
-        <h2>Appearance</h2>
-        <div class="handle"></div>
-      </div>
-      <div class="content">
-        <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
-      </div>
-    </div>
-
-    <div class="envelope" onclick="openModal('Quality')">
-      <div class="flap">
-        <h2>Quality</h2>
-        <div class="handle"></div>
-      </div>
-      <div class="content">
-        <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
-      </div>
-    </div>
-
-    <div class="envelope" onclick="openModal('Composition')">
-      <div class="flap">
-        <h2>Composition</h2>
-        <div class="handle"></div>
-      </div>
-      <div class="content">
-        <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
-      </div>
-    </div>
-
-    <div class="envelope" onclick="openModal('Navigation')">
-      <div class="flap">
-        <h2>Navigation</h2>
-        <div class="handle"></div>
-      </div>
-      <div class="content">
-        <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
-      </div>
-    </div>
-
-    <div class="envelope" onclick="window.location.href='cookie.html'">
-      <div class="flap">
-        <h2>Cookie</h2>
-        <div class="handle"></div>
-      </div>
-      <div class="content">
-        <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
-      </div>
-    </div>
-  </main>
-
-  <!-- Modal Structure -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <h3 id="modalTitle"></h3>
-      <p id="modalContent"></p>
+    <div class="content">
+      <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
     </div>
   </div>
 
-<!-- Modal -->
-<div class="modal-overlay" id="videoModalOverlay">
+  <div class="envelope" onclick="openModal('Worth')">
+    <div class="flap">
+      <h2>Worth</h2>
+      <div class="handle"></div>
+    </div>
+    <div class="content">
+      <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
+    </div>
+  </div>
+
+  <div class="envelope" onclick="openModal('Framing')">
+    <div class="flap">
+      <h2>Framing</h2>
+      <div class="handle"></div>
+    </div>
+    <div class="content">
+      <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
+    </div>
+  </div>
+
+  <div class="envelope" onclick="openModal('Appearance')">
+    <div class="flap">
+      <h2>Appearance</h2>
+      <div class="handle"></div>
+    </div>
+    <div class="content">
+      <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
+    </div>
+  </div>
+
+  <div class="envelope" onclick="openModal('Quality')">
+    <div class="flap">
+      <h2>Quality</h2>
+      <div class="handle"></div>
+    </div>
+    <div class="content">
+      <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
+    </div>
+  </div>
+
+  <div class="envelope" onclick="openModal('Composition')">
+    <div class="flap">
+      <h2>Composition</h2>
+      <div class="handle"></div>
+    </div>
+    <div class="content">
+      <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
+    </div>
+  </div>
+
+  <div class="envelope" onclick="openModal('Navigation')">
+    <div class="flap">
+      <h2>Navigation</h2>
+      <div class="handle"></div>
+    </div>
+    <div class="content">
+      <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
+    </div>
+  </div>
+
+  <div class="envelope" onclick="window.location.href='cookie.html'">
+    <div class="flap">
+      <h2>Cookie</h2>
+      <div class="handle"></div>
+    </div>
+    <div class="content">
+      <img src="envelope-closed.png" alt="Envelope" class="letter-img" />
+    </div>
+  </div>
+</main>
+
+<!-- Text Modal -->
+<div class="modal-overlay" id="modalOverlay">
   <div class="modal">
-    <button class="modal-close" onclick="closeVideoModal()">&times;</button>
-    <video id="reflectionVideo" width="100%" controls autoplay muted>
-      <source src="your_video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h3 id="modalTitle"></h3>
+    <p id="modalContent"></p>
   </div>
 </div>
 
-  
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
